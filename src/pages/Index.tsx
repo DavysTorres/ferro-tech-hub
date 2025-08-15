@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -13,7 +13,7 @@ const Index = () => {
       <ServicesSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton />
+      <ChatBot />
     </div>
   );
 };
