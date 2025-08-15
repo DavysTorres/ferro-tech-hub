@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
+  const phoneNumber = "5551234567";
+  const message = encodeURIComponent("Hola, me interesa obtener información sobre sus productos y servicios de FerreIndustrial.");
+
+  const openWhatsApp = () => {
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contacto" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -78,6 +86,29 @@ const ContactSection = () => {
                       Sábados: 8:00 AM - 2:00 PM<br />
                       Domingos: Cerrado
                     </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 bg-gradient-card border-border hover:shadow-card-soft transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-600 p-3 rounded-lg">
+                    <MessageCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-card-foreground mb-2">WhatsApp</h4>
+                    <p className="text-muted-foreground mb-3">
+                      Contáctanos directamente por WhatsApp para atención inmediata
+                    </p>
+                    <Button
+                      onClick={openWhatsApp}
+                      variant="hero"
+                      size="sm"
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                    >
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Chatear ahora
+                    </Button>
                   </div>
                 </div>
               </Card>
